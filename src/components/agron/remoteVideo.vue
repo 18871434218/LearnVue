@@ -1,6 +1,6 @@
 <template>
     <div id="video">
-       <div id="localVideo" style="height:400px, width: 400px"></div>
+       <div id="localVideo"  style="height:400px, width: 400px"></div>
        <div id="RemoteVideo" style="height:400px, width: 400px"></div>
     </div>
 </template>
@@ -9,9 +9,13 @@
 /* import { AgoraRTC } from '../libery/AgoraRTCSDK-3.1.1' */
 import '../../libery/AgoraRTCSDK-3.1.1';
 export default {
-    mounted(){
+    methods:{
+        startvideo(){
+          let client = null;
+          let localStream = null;
+          let uid = null;
           //创建Client对象
-          client = AgoraRTC.createClient({mode: 'live', codec: 'h264'});
+          client = AgoraRTC.createClient({mode: 'live', codec: 'vp8'});
 
           //初始化Client对象
           client.init(
@@ -21,9 +25,9 @@ export default {
 
                   //加入频道
                   client.join(
-                      null,
+                       null,
                       'test',
-                      1111,  //用户标识id, 可以自己定义
+                       null,     //用户标识id, 可以自己定义
                       function(uid){
                           console.log('用户id: '+ uid + '加入频道成功');
 
@@ -39,7 +43,8 @@ export default {
                           localStream.init(
                               function(){
                                   console.log("获取用户媒体成功");
-                                  localStream.play('localVideo');                   //显示本地视频播放<div>标签id名
+                                  localStream.play("localVideo");                   //显示本地视频播放<div>标签id名   这块有问题
+                                   //   addView()
 
                                   //发布本地音视频流
                                   client.publish(localStream, function(err){
@@ -56,7 +61,7 @@ export default {
                           );
 
                           //订阅远程视频
-                          
+                        
                           //监听到新的视频
                           client.on('stream-added', function(evt){
                               var stream = evt.stream;
@@ -71,7 +76,8 @@ export default {
                           client.on('stream-subscribed', function(evt){
                               var remoteStream = evt.stream;
                               console.log("订阅远程音视频流成功：", remoteStream.getId());
-                              remoteStream.play('agora_video');    //显示远程视频播放
+                              remoteStream.play("RemoteVideo");           //显示远程视频播放
+                            //   addView();
                           });
                       },
 
@@ -80,7 +86,12 @@ export default {
                       }
                   );
               }
-          )
+           )
+        }
+    },
+
+    mounted(){
+        this.startvideo();
     }
 }
 </script>
