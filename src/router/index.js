@@ -14,6 +14,7 @@ import Login from '@/components/Login'
 import VueTest from '@/components/VueTest'
 import VueEight from '@/components/VueEight'
 import remoteVideo from '@/components/agron/remoteVideo'
+import carVideo from '@/components/carMonter/carVideo'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 /* import {button, select} from 'element-ui' */
@@ -27,7 +28,7 @@ export default new Router({
   routes: [
     {
       path: '/',             
-      redirect: '/remoteVideo'
+      redirect: '/carVideo'
     },
     {
       path: '/home',  
@@ -98,6 +99,11 @@ export default new Router({
        path: '/remoteVideo',
        name: 'remoteVideo',
        component: remoteVideo
+    },
+    {
+       path: '/carVideo',
+       name: 'carVideo',
+       component: carVideo
     }
   ]
 })

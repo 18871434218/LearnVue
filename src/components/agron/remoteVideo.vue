@@ -10,6 +10,8 @@
 import '../../libery/AgoraRTCSDK-3.1.1';
 export default {
     mounted(){
+          let client = null;
+          let localStream = null;
           //创建Client对象
           client = AgoraRTC.createClient({mode: 'live', codec: 'h264'});
 
@@ -23,7 +25,7 @@ export default {
                   client.join(
                       null,
                       'test',
-                      1111,  //用户标识id, 可以自己定义
+                       1111,  //用户标识id, 可以自己定义
                       function(uid){
                           console.log('用户id: '+ uid + '加入频道成功');
 
@@ -71,12 +73,12 @@ export default {
                           client.on('stream-subscribed', function(evt){
                               var remoteStream = evt.stream;
                               console.log("订阅远程音视频流成功：", remoteStream.getId());
-                              remoteStream.play('agora_video');    //显示远程视频播放
+                              remoteStream.play('agora_video');                    //显示远程视频播放
                           });
                       },
 
                       function(err){
-                          console.log("AgoraRTC client 初始化失败", err);
+                          console.log("AgoraRTC client 初始化失败", err); 
                       }
                   );
               }
