@@ -14,7 +14,9 @@ import Login from '@/components/Login'
 import VueTest from '@/components/VueTest'
 import VueEight from '@/components/VueEight'
 import remoteVideo from '@/components/agron/remoteVideo'
-import carVideo from '@/components/carMonter/carVideo'
+import CarMintor from '@/components/CarMonter/CarMintor'
+import testVideo from '@/components/CarMonter/testVideo'
+import RTSP from '@/components/CarMonter/RTSP'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 /* import {button, select} from 'element-ui' */
@@ -28,7 +30,7 @@ export default new Router({
   routes: [
     {
       path: '/',             
-      redirect: '/carVideo'
+      redirect: '/testVideo'
     },
     {
       path: '/home',  
@@ -49,7 +51,7 @@ export default new Router({
           component: Third
         },
         {
-          path: '/home/Four/:id/:name',    //url中传参
+          path: '/home/Four/:id/:name',       //url中传参
           name: 'Four',
           component: Four 
         },
@@ -101,9 +103,19 @@ export default new Router({
        component: remoteVideo
     },
     {
-       path: '/carVideo',
-       name: 'carVideo',
-       component: carVideo
+       path: '/RTSP',
+       name: 'RTSP',
+       component: RTSP
+    },
+    {
+       path: '/CarMintor',
+       name: 'CarMintor',
+       component: CarMintor
+    },
+    {
+       path: '/testVideo',
+       name: 'testVideo',
+       component: testVideo
     }
   ]
 })

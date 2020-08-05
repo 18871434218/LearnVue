@@ -1,5 +1,5 @@
 <template>
-    <div id="CarVideo">
+    <div id="CarMintor">
         <video-player class="video-player vjs-custom-skin" 
               ref="videoPlayer" 
               :playsinline="true"
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: 'CarVideo',
+    name: 'CarMintor',
     data(){
         return {
             playerOptions : {
@@ -23,9 +23,8 @@ export default {
                   aspectRatio: '16:9',
                   fluid: true,
                   sources:[{
-                      type:"video/mp4",                                     //视频流协议，如果时hls,需要后端开启跨域
-                      /* src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm",     //需要后端把摄像头视频流转换为对应的src地址进行实时监控 */
-                      src: "169.254.39.92/doc/page/preview.asp"
+                      type:"video/rtsp",                                     //视频流协议，如果时hls,需要后端开启跨域
+                      src: "rtsp://admin:wangdong2014@10.0.12.252:554/h264/ch1/main/av_stream",     //需要后端把摄像头视频流转换为对应的src地址进行实时监控
                   }],
                   poster: "",
                   notSupportedMessage:'此视频无法播放',
