@@ -17,6 +17,10 @@ import remoteVideo from '@/components/agron/remoteVideo'
 import CarMintor from '@/components/CarMonter/CarMintor'
 import testVideo from '@/components/CarMonter/testVideo'
 import RTSP from '@/components/CarMonter/RTSP'
+import TestgetDevice from '@/components/CarMonter/TestgetDevice'
+import Time from '@/components/testElement/Time'
+import lnput from '@/components/testElement/El-Input'
+import Dialog from '@/components/DialogV'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 /* import {button, select} from 'element-ui' */
@@ -30,7 +34,7 @@ export default new Router({
   routes: [
     {
       path: '/',             
-      redirect: '/testVideo'
+      redirect: '/Dialog'
     },
     {
       path: '/home',  
@@ -116,6 +120,26 @@ export default new Router({
        path: '/testVideo',
        name: 'testVideo',
        component: testVideo
+    },
+    {
+       path: '/TestgetDevice',
+       name: 'TestgetDevice',
+       component: TestgetDevice
+    },
+    {
+      path: '/Time',
+      name: 'Time',
+      component: Time
+    },
+    {
+      path: '/lnput',
+      name: 'lnput',
+      component: lnput
+    },
+    {
+      path: '/Dialog',
+      name: 'Dialog',
+      component: Dialog
     }
   ]
 })
