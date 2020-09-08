@@ -24,7 +24,7 @@ Vue.use(ElementUI)
 /* Vue.use(button, select) */
 
 export default new Router({
-  mode: 'history',    //在显示页面地址栏上删除#号
+  mode: 'history',       //在显示页面地址栏上删除#号
   routes: [
     {
       path: '/',             
@@ -49,7 +49,7 @@ export default new Router({
           component: Third
         },
         {
-          path: '/home/Four/:id/:name',    //url中传参
+          path: '/home/Four/:id/:name',      //url中传参
           name: 'Four',
           component: Four 
         },
@@ -86,7 +86,7 @@ export default new Router({
       component: VueTest
     },
     {
-      path: '/VueEight',  //测试
+      path: '/VueEight',    //测试
       name: 'VueEight',
       component: VueEight
     },
@@ -96,7 +96,7 @@ export default new Router({
       component: VueTen
     },
     {
-       path: '/remoteVideo',
+       path: '/remoteVideo',  //测试视频
        name: 'remoteVideo',
        component: remoteVideo
     },
