@@ -1,5 +1,5 @@
 <template>
-    <el-row id="roadManager" style="width:1200px">
+    <el-row id="roadManager">
         <el-row>
             <el-col :span="15">&nbsp;</el-col>
             <el-col :span="4">
@@ -56,7 +56,6 @@
                         <div style="white-space:nowrap;">
                             名字: &nbsp;&nbsp;&nbsp;&nbsp;
                             <el-input
-                                @blur="message"
                                 v-model="new_name"
                                 size="mini"
                                 placeholder="请输入名字"
@@ -77,7 +76,7 @@
             </el-row>
             <el-row>
                 <el-row>
-                    <el-col :span="5" style="font-size:22px;">路网导入</el-col>
+                    <el-col :span="4" style="font-size:22px;">路网导入</el-col>
                     <el-col :span="11" style="font-size:22px;">设备端路网列表</el-col>
                     <el-col :span="8" style="font-size:22px;">本地路网列表</el-col>
                 </el-row>
@@ -189,7 +188,7 @@
                 //添加
                 // roads_add: null,
                 /* node_X : null,
-                                                                                                                                                                              node_Y : null, */
+                node_Y : null, */
                 node: [],
                 // singnode: [],
                 PostnodeXY: [],
@@ -458,13 +457,6 @@
             },
 
             saveNew() {
-                for (let road of this.$root.LocalRoadsData) {
-                    if (this.new_name == road.name) {
-                        return true;
-                    }
-                }
-                return false;
-
                 let url = "/api/agv/fileManager/setRoadData";
                 let index = 0;
                 for (const XY of this.node) {

@@ -1,12 +1,18 @@
 <template>
     <div id="lnput">
+        <div>
         <el-input
+            :id="Input1"
             size="mini"
             @change="valideMsg" 
             placeholder="请输入内容"
             v-model="input_value"
             clearable>
         </el-input>
+        </div>
+        <div id="Input2">
+            请输入有效名称
+        </div>
     </div>
 </template>
 <script>
