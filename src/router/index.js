@@ -14,30 +14,8 @@ import Login from '@/components/Login'
 import VueTest from '@/components/VueTest'
 import VueEight from '@/components/VueEight'
 import remoteVideo from '@/components/agron/remoteVideo'
-import CarMintor from '@/components/CarMonter/CarMintor'
-import testVideo from '@/components/CarMonter/testVideo'
-import RTSP from '@/components/CarMonter/RTSP'
-import TestgetDevice from '@/components/CarMonter/TestgetDevice'
-import Time from '@/components/testElement/Time'
-import lnput from '@/components/testElement/El-Input'
-import Dialog from '@/components/DialogV'
-import SelectOption from '@/components/testElement/El-Select'
-import elform from '@/components/testElement/el-form'
-import container from '@/components/UI/Layout/container'
-import elrow from '@/components/UI/Layout/elrow'
-import elcascader from '@/components/UI/Layout/elcascader'
-import upload from '@/components/testElement/Upload'
-import Test$Data from '@/components/TestFunction/Test$Data'
-import boundaryGap from '@/components/Echart/boundaryGap'
-import Echartbar from '@/components/Echart/Echartbar'
-import publish from '@/components/Car/publish.vue'
-import Steps from '@/components/testElement/Steps.vue'
-import inputnumber from '@/components/testElement/el-input-number.vue'
-import timeline from '@/components/testElement/timeline.vue'
-import DropDown from '@/components/testElement/DropDown.vue'
-import objfor from '@/components/TestFunction/objfor.vue'
-
-import ElementUI, { Select, Form } from 'element-ui'
+import carVideo from '@/components/carMonter/carVideo'
+import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 /* import {button, select} from 'element-ui' */
 
@@ -46,11 +24,11 @@ Vue.use(ElementUI)
 /* Vue.use(button, select) */
 
 export default new Router({
-  mode: 'history',              //在显示页面地址栏上删除#号
+  mode: 'history',       //在显示页面地址栏上删除#号
   routes: [
     {
       path: '/',             
-      redirect: '/objfor'
+      redirect: '/carVideo'
     },
     {
       path: '/home',  
@@ -71,7 +49,7 @@ export default new Router({
           component: Third
         },
         {
-          path: '/home/Four/:id/:name',        //url中传参
+          path: '/home/Four/:id/:name',      //url中传参
           name: 'Four',
           component: Four 
         },
@@ -108,7 +86,7 @@ export default new Router({
       component: VueTest
     },
     {
-      path: '/VueEight',  //测试
+      path: '/VueEight',    //测试
       name: 'VueEight',
       component: VueEight
     },
@@ -118,118 +96,14 @@ export default new Router({
       component: VueTen
     },
     {
-       path: '/remoteVideo',
+       path: '/remoteVideo',  //测试视频
        name: 'remoteVideo',
        component: remoteVideo
     },
     {
-       path: '/RTSP',
-       name: 'RTSP',
-       component: RTSP
-    },
-    {
-       path: '/CarMintor',
-       name: 'CarMintor',
-       component: CarMintor
-    },
-    {
-       path: '/testVideo',
-       name: 'testVideo',
-       component: testVideo
-    },
-    {
-       path: '/TestgetDevice',
-       name: 'TestgetDevice',
-       component: TestgetDevice
-    },
-    {
-      path: '/Time',
-      name: 'Time',
-      component: Time
-    },
-    {
-      path: '/lnput',
-      name: 'lnput',
-      component: lnput
-    },
-    {
-      path: '/Dialog',
-      name: 'Dialog',
-      component: Dialog
-    },
-    {
-      path: '/SelectOption',
-      name: 'SelectOption',
-      component: SelectOption
-    },
-    {
-      path: '/elform',
-      name: 'elform',
-      component: elform
-    },
-    {
-       path: '/container',
-       name: 'container',
-       component: container
-    },
-    {
-       path: '/elrow',
-       name: 'elrow',
-       component: elrow
-    },
-    {
-       path: '/elcascader',
-       name: 'elcascader',
-       component: elcascader
-    },
-    {
-       path: '/upload',
-       name: 'upload',
-       component: upload
-    },
-    {
-       path: '/Test$Data',
-       name: 'Test$Data',
-       component: Test$Data
-    },
-    {
-       path: '/boundaryGap',
-       name: 'boundaryGap',
-       component: boundaryGap
-    },
-    {
-       path: '/Echartbar',
-       name: 'Echartbar',
-       component: Echartbar
-    },{
-       path: '/publish',
-       name: 'publish',
-       component: publish
-    },
-    {
-       path:'/Steps',
-       name: 'Steps',
-       component: Steps
-    },
-    {
-       path: '/inputnumber',
-       name: 'inputnumber',
-       component: inputnumber
-    },
-    {
-       path:'/timeline',
-       name: 'timeline',
-       component: timeline
-    },
-    {
-      path: '/DropDown',
-      name: 'DropDown',
-      component: DropDown
-    },
-    {
-      path: '/objfor',
-      name: 'objfor',
-      component: objfor
+       path: '/carVideo',
+       name: 'carVideo',
+       component: carVideo
     }
   ]
 })
